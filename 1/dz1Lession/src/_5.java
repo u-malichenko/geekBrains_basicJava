@@ -6,7 +6,7 @@ public class _5 {
         System.out.println("Программа для определения положительное и лиотрицательное число ввел пользователь");
         int a = readArg("Введите число: ");
 
-        getAbs(a);
+        System.out.println("Число " + a + getAbs(a));
     }
     static int readArg(String text){
         Scanner userInput = new Scanner(System.in);
@@ -15,9 +15,7 @@ public class _5 {
         return arg;
     }
 
-    private static void getAbs(int val){
-        String absVal;
-        absVal = (val <0) ? " отрицательное." : " положительное.";
-        System.out.println("Число " + val + absVal);
+    private static String getAbs(int number){
+       return (number >= 0) ? " положительное." : " отрицательное.";
     }
 }

@@ -6,7 +6,7 @@ public class _6 {
         System.out.println("Программа вернет вам Истину если вы введете отрицательное число.");
         int xX = readArg("Введите целое число: ");
 
-        System.out.println(getBool(xX));
+        System.out.println(isNegative(xX));
     }
 
     static int readArg(String text){
@@ -16,7 +16,7 @@ public class _6 {
         return arg;
     }
 
-    static boolean getBool(int x){
-        return x < 0;
+    static boolean isNegative(int x){
+        return (x < 0);
     }
 }

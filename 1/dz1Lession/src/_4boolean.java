@@ -18,10 +18,6 @@ public class _4boolean {
     }
 
     static boolean getValue(int x, int y){
-        boolean result = false;
-        if((x * y)>= 10 && (x * y) <= 20){
-            result = true;
-        }
-        return result;
+        return (x + y) >= 10 && (x + y) <= 20;
     }
 }
