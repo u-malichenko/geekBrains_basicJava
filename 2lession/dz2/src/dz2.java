@@ -76,6 +76,7 @@ public class dz2 {
 
 //2е задание, метод для заполнения одномерного массива значениями 0 3 6 9 12 15 18 21:
     public static void getArr2(int[] arr) {
+// закоментил 2й вариант
 //        for(int i = 0, j = 0; i < arr.length; i++, j += 3) {
 //            arr[i] = j;
 //        }
@@ -96,6 +97,7 @@ public class dz2 {
         for (int i = 0; i < arr.length ; i++) {
             arr[i][i] = 1;
             arr[i][arr.length-i-1] = 1;
+// закоментил более простой вариант
 //            for (int j = 0; j < arr[i].length; j++) {
 //                if (i == j || ((arr.length-1) == (i + j)))
 //                    arr[i][j] = 1;
