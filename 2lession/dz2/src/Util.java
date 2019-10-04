@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class Util {
     //метод для заполнения одномерного массива рандомными числами:
     static void getArr(int n, int[] arr){
@@ -23,5 +25,15 @@ public class Util {
             System.out.println();
         }
     }
+
+    //метод для ввеода значения пользователем
+    static int readArg(String text){
+        Scanner userInput = new Scanner(System.in);
+        System.out.println(text);
+        int arg = userInput.nextInt();
+
+        return arg;
+    }
+
 
 }
