@@ -76,8 +76,11 @@ public class dz2 {
 
 //2е задание, метод для заполнения одномерного массива значениями 0 3 6 9 12 15 18 21:
     public static void getArr2(int[] arr) {
-        for(int i = 0, j = 0; i < arr.length; i++, j += 3) {
-            arr[i] = j;
+//        for(int i = 0, j = 0; i < arr.length; i++, j += 3) {
+//            arr[i] = j;
+//        }
+        for (int i = 0; i < arr.length; i++) {
+            arr[i]=i*3;
         }
     }
 
@@ -129,7 +132,6 @@ public class dz2 {
         }
         return false;
     }
-
 
 //7 задание, метод для сдвига значений в массиве:
     public static void arrChange7(int arr[], int n){
