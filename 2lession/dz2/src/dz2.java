@@ -110,14 +110,16 @@ public class dz2 {
         int max = arr[0];
         int min = arr[0];
         for (int i = arr.length-1; i > 0; i--) {
-            if(arr[i] >= max){
-                max = arr[i];
-            }else if(arr[i]<min){
-                min = arr[i];
-            }
-// второе решение при помощи тернарных выражений:
-//            max = (arr[i] > max) ? arr[i] : max;
-//            min = (arr[i] < min) ? arr[i] : min;
+            max = (arr[i] > max) ? arr[i] : max;
+            min = (arr[i] < min) ? arr[i] : min;
+// второе решение при помощи if:
+//            if(arr[i] >= max){
+//                max = arr[i];
+//            }else if(arr[i]<min){
+//                min = arr[i];
+//            }
+
+
         }
         System.out.println("Максимальное число в массиве  = " + max + ", минимальное = " +min);
     }
