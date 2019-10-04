@@ -115,6 +115,9 @@ public class dz2 {
             }else if(arr[i]<min){
                 min = arr[i];
             }
+// второе решение при помощи тернарных выражений:
+//            max = (arr[i] > max) ? arr[i] : max;
+//            min = (arr[i] < min) ? arr[i] : min;
         }
         System.out.println("Максимальное число в массиве  = " + max + ", минимальное = " +min);
     }
