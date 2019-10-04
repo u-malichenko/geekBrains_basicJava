@@ -94,10 +94,12 @@ public class dz2 {
 //4е задание, метод для заполения 1ми диагоналей квадратного массива:
     public static void arrChange4(int[][] arr){
         for (int i = 0; i < arr.length ; i++) {
-            for (int j = 0; j < arr[i].length; j++) {
-                if (i == j || ((arr.length-1) == (i + j)))
-                    arr[i][j] = 1;
-            }
+            arr[i][i] = 1;
+            arr[i][arr.length-i-1] = 1;
+//            for (int j = 0; j < arr[i].length; j++) {
+//                if (i == j || ((arr.length-1) == (i + j)))
+//                    arr[i][j] = 1;
+//            }
         }
     }
 
