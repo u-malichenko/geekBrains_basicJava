@@ -88,7 +88,7 @@ public class dz2 {
 //3 задание, метод для умножения  чисел < 6 в массиве:
     public static void arrChange3(int arr[]){
         for (int i = 0; i < arr.length; i++) {
-            arr[i] = (arr[i] < 6) ? arr[i]= (arr[i]*2) : arr[i];
+            arr[i] = (arr[i] < 6) ? (arr[i]*2) : arr[i];
         }
     }
 
@@ -119,7 +119,7 @@ public class dz2 {
 //                min = arr[i];
 //            }
         }
-        System.out.println("Максимальное число в массиве  = " + max + ", минимальное = " +min);
+        System.out.println("Максимальное число в массиве  = " + max + ", минимальное = " + min);
     }
 
 //6е задание, метод для поиска одинаковых сумм интервалов в массиве:
