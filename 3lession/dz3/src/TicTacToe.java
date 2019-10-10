@@ -341,7 +341,7 @@ public class TicTacToe {
      */
 
     private static  boolean checkWin(char playerSymbol){
-        boolean result1 = true; // проверить первую диагональ
+        boolean result1 = true; //проверить первую диагональ
         boolean result2 = true; //проверить вторую диагональ
         boolean result3 = true;; //проверрка победы по строкам
         boolean result4 = true;; //проверрка победы по столбцам
@@ -350,12 +350,12 @@ public class TicTacToe {
             result3 = true; //инициируем в цикле для проверки каждой строки отдельно
             result4 = true; // инициируем в цикле для проверки каждого столбца отдельно
 
-            result1 = map[i][i] == playerSymbol && result1; // проверить первую диагональ если диагональ прервалась то результат уже в цикле ни когда не будет тру
-            result2 = map[i][SIZE - 1 - i] == playerSymbol && result2;  //проверить вторую диагональ если диагональ прервалась то результат уже в цикле ни когда не будет тру
+            result1 &= (map[i][i] == playerSymbol); // проверить первую диагональ если диагональ прервалась то результат уже в цикле ни когда не будет тру
+            result2 &= (map[i][SIZE - 1 - i] == playerSymbol);  //проверить вторую диагональ если диагональ прервалась то результат уже в цикле ни когда не будет тру
 
             for (int j = 0; j < SIZE; j++) {
-                result3 = map[i][j] == playerSymbol && result3;  //проверрка победы по строкам
-                result4 = map[j][i] == playerSymbol && result4;  //проверрка победы по столбцам
+                result3 &= (map[i][j] == playerSymbol);  //проверрка победы по строкам
+                result4 &= (map[j][i] == playerSymbol);  //проверрка победы по столбцам
                 if(!(result3) && !(result4)) break; // если обе строки фолс то нет смысла проверять весь массив, выходим в главный цикл
             }
             if(result3 || result4) break; // если есть победа по вложенному циклу то предыдущий цикл прерываем, уже будет тру
