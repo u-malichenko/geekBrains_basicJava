@@ -1,7 +1,7 @@
 import java.util.Random;
 import java.util.Scanner;
 
-public class TicTacToe {
+public class TicTacToe1 {
     /**1. Полностью разобраться с кодом, попробовать переписать с нуля, стараясь не подглядывать;
      * Блок настроек игры
      */
@@ -88,7 +88,7 @@ public class TicTacToe {
     private static void computerTurn(){
         int x = -1;
         int y = -1;
-        int rate = 0; // рейтинг ячейки в памяти
+        int rate = 1; // рейтинг ячейки в памяти не меньше 1 иначе выбираем рандомную ячейку дальше в методе в конце
         int res = 0; // рейтинг ячейки кандидата на больший вес
 
         if(SILLY_MODE){
@@ -173,104 +173,63 @@ public class TicTacToe {
                     //если ход найден, прерываем внешинй цикл
                     if(moveFound) break;
                 }
-                //если ни чего не нашли, тогда генерируем случайный ход
-                if (x == -1) {
-                    do {
-                        x = random.nextInt(SIZE);
-                        y = random.nextInt(SIZE);
-                    } while (!isCellValid(x, y));
-                    System.out.println("RANDOM");
-                }
             }
-           // конец простого хода пк
+            // конец простого хода пк
             else {
                 // сложный режим
+                int maxScoreFieldX = -1;
+                int maxScoreFieldY = -1;
+                int maxScore = 0; // максимальный рейтинг
 
                 for (int i = 0; i < SIZE; i++) { //первый цикл строк
                     for (int j = 0; j < SIZE; j++) { //второй цикл столбцов
-                        if (map[i][j] == DOT_EMPTY) { // ищем пустые клетки для возможного хода
+                        int fieldScore = 0; //переменная для текущего значения рейтинга
 
-                            res = checkRate(i, j); // идем в метод на проверку соседних клеток и  наличие выигрышных линий
+                        if(map[i][j] == DOT_EMPTY){ // если поле пустое? то проверяем направления для этой ячейки и считаем рейтинг
+                            // проверяем направления
+                            if(i-1 >= 0 && j-1 >= 0 && map[i-1][j-1] == DOT_O) fieldScore++;
+                            //верх
+                            if (i - 1 >= 0 && map[i-1][j] == DOT_O) fieldScore++;
+                            //право верх
+                            if(i - 1 >= 0 && j + 1 < SIZE && map[i-1][j+1] == DOT_O) fieldScore++;
+                            //право
+                            if(j + 1 < SIZE && map[i][j+1] == DOT_O) fieldScore++;
+                            //право низ
+                            if(i + 1 < SIZE && j + 1 < SIZE && map[i+1][j+1] == DOT_O) fieldScore++;
+                            //низ
+                            if(i + 1 < SIZE && map[i+1][j] == DOT_O) fieldScore++;
+                            //лево низ
+                            if(i + 1 < SIZE && j - 1 >= 0 && map[i+1][j-1] == DOT_O) fieldScore++;
+                            //лево
+                            if(j - 1 >= 0 && map[i][j-1] == DOT_O) fieldScore++;
+                        } // конец проверки ПУСТОЙ ячейки
 
-                            if (rate <= res) { // проверяем какой рейтинг у ячейки в памяти и ячейки-кандидата
-                                rate = res; // и возможно сохраняем ее индексы в память
-                                y = i; // строка
-                                x = j; //столбец
-                            }
+                        if(fieldScore > maxScore){ //сравниваем текущее полученное колличество очков с предыдущим максимальным
+                            maxScore = fieldScore; //, если надо заменяем максимальное и координаты
+                            maxScoreFieldX = j;
+                            maxScoreFieldY = i;
                         }
                     }//первый фор
                 }//второй фор
 
-                if (rate == 0) {//все клетки имеют одинаковый рейтинг, тогда генерируем случайный ход
-                    do {
-                        x = random.nextInt(SIZE);
-                        y = random.nextInt(SIZE);
-                    } while (!isCellValid(x, y));
+                //если в цикле найдена наилучшая клетка
+                if(maxScoreFieldX != -1){
+                    x = maxScoreFieldX; //обновим координаты х у через временные из цикла
+                    y = maxScoreFieldY;
                 }
+            } // конец сложного хода конец эльзе
+
+            //если ни чего не нашли, тогда генерируем случайный ход
+            if (x == -1) {
+                do {
+                    x = random.nextInt(SIZE);
+                    y = random.nextInt(SIZE);
+                } while (!isCellValid(x, y));
+                System.out.println("RANDOM");
             }
         }
         System.out.println("Компьютер выбрал ячейку " + (y+1) + " " + (x+1));
         map[y][x] = DOT_O;
-    }
-
-    /**
-     * Метод для проверки рейтинга ячейки для хода
-     * @param constant_i - постоянная константа строки проверки
-     * @param constant_j - постоянная константа столбца проверки
-     * @return result - рейтинг ячейки для хода
-     */
-
-    private static int checkRate(int constant_i, int constant_j){
-        int result = 0; // общий возвращаемый результат
-        int res1 = 0; //рейтинг по строкам
-        int res2 = 0; //рейтинг по столбцам
-        int res3 = 0; //рейтинг по диагонали1
-        int res4 = 0; //рейтинг по диагонали2
-
-        //считаем сумму рейтинга по строкам
-        for (int j = 0; j < SIZE; j++) {
-            if(map[constant_i][j] == 'O') {
-                res1 += 1;
-            }else if(map[constant_i][j] == 'X'){
-                res1 = 0;
-                break; // завершит цикл j в случае отилчного символа нет смысла собирать эту комбинацию
-            }
-        }
-        //считаем сумму рейтинга по столбцам
-        for (int i = 0; i < SIZE; i++) {
-            if(map[i][constant_j] == 'O') {
-                res2 += 1;
-            }else if(map[i][constant_j] == 'X'){
-                res2 = 0;
-                break; // завершит цикл j в случае отилчного символа нет смысла собирать эту комбинацию
-            }
-        }
-
-        // считаем рейтинг для первой диагонали, если точка проверки на ней лежит
-        if(constant_i == constant_j){
-            for (int i = 0; i < SIZE; i++) {
-                if(map[i][i] == 'O') {
-                    res3 += 1;
-                }else if(map[i][i] == 'X') {
-                    res3 = 0;
-                    break; // завершит цикл  в случае отилчного символа нет смысла собирать эту комбинацию
-                }
-            }
-        }
-
-        // считаем рейтинг для 2й диагонали, если точка проверки на ней лежит
-        if(constant_i == (SIZE - 1 - constant_j)){
-            for (int i = 0; i < SIZE; i++) {
-                if(map[i][SIZE - 1 - i] == 'O') {
-                    res4 += 1;
-                }else if(map[i][SIZE - 1 - i] == 'X') {
-                    res4 = 0;
-                    break; // завершит цикл  в случае отилчного символа нет смысла собирать эту комбинацию
-                }
-            }
-        }
-        result = res1 + res2 + res3 + res4;
-        return result;
     }
 
     /** Оптимизировал сократил количество if
@@ -312,7 +271,7 @@ public class TicTacToe {
 
     /**
      * Проверка на 100% заполеннность поля
-     * return boolean признак оптимальности
+     * return boolean прищнак оптимальности
      */
     private static boolean isMapFull(){
         boolean result = true;
@@ -320,9 +279,9 @@ public class TicTacToe {
         for (int i = 0; i < SIZE; i++) {
             for (int j = 0; j < SIZE; j++) {
                 if(map[i][j] == DOT_EMPTY){
-                    // пустая клетка найдена
-                    result =false;
-                    //выход из внутреннего цикла сократит число итераций
+                   // пустая клетка найдена
+                   result =false;
+                   //выход из внутреннего цикла сократит число итераций
                     break;
                 }
             }
