@@ -2,15 +2,11 @@
 
 public class Cat extends Animal {
 
-    //конструктор без параметров:
-    public Cat(){
-    }
-
     //конструктор с параметрами:
-    public Cat(String _name, double _run, double _jump){
+    public Cat(String _name){
         super("Кот " + _name); //переопределяем конструктор с именем
-        this.maxRun = _run;
-        this.maxJump = _jump;
+        this.maxRun = 200;
+        this.maxJump = 2;
     }
 
     //специфичный метод перезаписанный из абстрактного метода и класса Animal:
@@ -18,4 +14,9 @@ public class Cat extends Animal {
     protected String voice() {
         return "Meeey";
     }
+
+    public void swim(double _distance) {
+            System.out.println(this.name + " не умеет плавать!");
+    }
+
 }

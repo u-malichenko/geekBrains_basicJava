@@ -17,25 +17,21 @@ public class MainClass {
                 System.out.println(per);
             }
         }
-
-
-        Animal cat1 = new Cat("Barsik", 200,2.1); //создали переменную кэт куда положили экземпляр класа Анимал c конкретными ограничениями
-        Dog dog1 = new Dog("Sharik",500,0.5,10);//создали переменную  дог куда положили экземпляр класа Дог c конкретными ограничениями, так как класс Свимминг есть только там
-
         System.out.println("");
-        //Дог1 пытается проплыть х метров
-        double x=10;
-        System.out.println(dog1.name + " - результат заплыва на дистанцию: " + x + " метров, - " + (dog1.swimming(x) ? (" преодолеет препятствие. " + dog1.voice()) : " не сможет преодалеть препятствие  "));
 
-        //Кэт1 пытается пробежать y метров
-        double y=201;
-        System.out.println(cat1.name + " - результат забега на дистанцию: " + y + " метров, - " + (cat1.running(y) ? (" преодолеет препятствие. " + cat1.voice()) : " не сможет преодалеть препятствие "));
+        Animal[] arrayOfAnimals = new Animal[3];
 
-        //Кэт1 пытается првгнуть z метров
-        double z=2;
-        System.out.println(cat1.name + " - результат прыжка высотой: " + z + " метра, - " + (cat1.jumping(z) ? (" преодолеет препятствие. " + cat1.voice()) : " не сможет преодалеть препятствие  "));
+        arrayOfAnimals[0] = new Cat("Barsik");
+        arrayOfAnimals[1] = new Dog("Sharik");
+        arrayOfAnimals[2] = new SuperCat("Васька!", 350,3);
 
-        //животное издает звук если может выполнить действие с заданными параметрами
+        for(Animal animal : arrayOfAnimals){
+            animal.run(150);
+            animal.jump(2.5);
+            animal.swim(5);
+        }
+
+
 
     }
 }

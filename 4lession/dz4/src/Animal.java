@@ -1,9 +1,9 @@
 public abstract class Animal{
 //5. Создать классы Собака и Кот с наследованием от класса Животное;
     protected String name;
-    protected double maxRun;
-    protected double maxJump;
-    protected double maxSwim;
+    protected double maxRun = 0;
+    protected double maxJump = 0;
+    protected double maxSwim = 0;
 
     public Animal(){
         this.name = "Животные";
@@ -27,8 +27,6 @@ public abstract class Animal{
             this.maxRun = 1;
         }
     }
-
-    //задаем ограничения для конкретного обекта класса
     public void setMaxJump(double _maxHeight) {
         if(_maxHeight > 0)
             this.maxJump =_maxHeight;
@@ -37,14 +35,39 @@ public abstract class Animal{
             this.maxJump = 1;
         }
     }
-
-    //описываю общие для всех подклассов методы(бегать, прыгать) передаю переменнуюдля проверки условия
-    public boolean running(double _distance) {
-        return _distance <= this.maxRun;
+    public void setMaxSwim(double _maxDistance) {
+        if(_maxDistance > 0)
+            this.maxSwim =_maxDistance;
+        else{
+            System.out.println("Дистанция не может быть отрицательна или = 0. Установлена максимальная дистанция по умолчанию = 1");
+            this.maxSwim = 1;
+        }
     }
 
-    public boolean jumping(double _height) {
-        return _height <= this.maxJump;
+
+    //описываю общие для всех подклассов методы
+    public void run(double _distance) {
+        if(maxRun > 0 && _distance <= this.maxRun)
+            System.out.println(this.name + " пробежал " + _distance + " метров");
+        else{
+            System.out.println(this.name + " не сможет пробежать столько!");
+        }
+    }
+
+    public void jump(double _height) {
+        if(maxJump > 0 && _height <= this.maxJump)
+            System.out.println(this.name + " прыгнул " + _height + " метров");
+        else{
+            System.out.println(this.name + " не сможет прыгнуть столько!");
+        }
+    }
+
+    public void swim(double _distance) {
+        if(maxSwim > 0 && _distance <= this.maxSwim)
+            System.out.println(this.name + " пролыл " + _distance + " метров");
+        else{
+            System.out.println(this.name + " не сможет проплыть столько!");
+        }
     }
 }
 
