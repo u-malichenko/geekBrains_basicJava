@@ -12,26 +12,28 @@ public class MainClass {
         persArray[4] = new Person("Tarkovsky Ivan", "Seller", " ivTarkovsky@mailbox.com ", "892312316", 30000,40);
 
         for (Person per : persArray) {
-            if(per.getPersonAge() > 40)
-            per.getPersonInfo();
+            if(per.getPersonAge() > 40){
+                //per.getPersonInfo();
+                System.out.println(per);
+            }
         }
 
 
-        Animal cat1 = new Cat("Barsik", 200,2); //создали переменную кэт куда положили экземпляр класа Анимал c конкретными ограничениями
+        Animal cat1 = new Cat("Barsik", 200,2.1); //создали переменную кэт куда положили экземпляр класа Анимал c конкретными ограничениями
         Dog dog1 = new Dog("Sharik",500,0.5,10);//создали переменную  дог куда положили экземпляр класа Дог c конкретными ограничениями, так как класс Свимминг есть только там
 
         System.out.println("");
         //Дог1 пытается проплыть х метров
         double x=10;
-        System.out.println(dog1.name + " - результат заплыва на дистанцию: " + x + " метров, равен - " + (dog1.swimming(x) ? (" true. " + dog1.voice()):"false"));
+        System.out.println(dog1.name + " - результат заплыва на дистанцию: " + x + " метров, - " + (dog1.swimming(x) ? (" преодолеет препятствие. " + dog1.voice()) : " не сможет преодалеть препятствие  "));
 
         //Кэт1 пытается пробежать y метров
-        double y=200;
-        System.out.println(cat1.name + " - результат забега на дистанцию: " + y + " метров, равен - " + (cat1.running(y) ? (" true. " + cat1.voice()):"false"));
+        double y=201;
+        System.out.println(cat1.name + " - результат забега на дистанцию: " + y + " метров, - " + (cat1.running(y) ? (" преодолеет препятствие. " + cat1.voice()) : " не сможет преодалеть препятствие "));
 
         //Кэт1 пытается првгнуть z метров
         double z=2;
-        System.out.println(cat1.name + " - результат прыжка высотой: " + z + " метра, равен - " + (cat1.jumping(z) ? "false":(" true. " + cat1.voice())));
+        System.out.println(cat1.name + " - результат прыжка высотой: " + z + " метра, - " + (cat1.jumping(z) ? (" преодолеет препятствие. " + cat1.voice()) : " не сможет преодалеть препятствие  "));
 
         //животное издает звук если может выполнить действие с заданными параметрами
 

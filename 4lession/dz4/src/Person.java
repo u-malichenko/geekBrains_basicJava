@@ -21,6 +21,9 @@ public class Person {
     public void getPersonInfo(){
         System.out.println("Фамилия Имя Отчество: " + this.fio + " Должность: " + this.position + " Электронная почта: " + this.email + " Номер телефона: " + this.phone + " Зарплата: " + this.salary + " Возраст: " + this.age);
     }
+    public String toString(){
+        return ("Фамилия Имя Отчество: " + this.fio + " Должность: " + this.position + " Электронная почта: " + this.email + " Номер телефона: " + this.phone + " Зарплата: " + this.salary + " Возраст: " + this.age);
+    }
 
     public int getPersonAge(){
         return this.age;

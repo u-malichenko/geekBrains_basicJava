@@ -1,9 +1,17 @@
 public abstract class Animal{
 //5. Создать классы Собака и Кот с наследованием от класса Животное;
     protected String name;
-    protected double run;
-    protected double jump;
-    protected double swim;
+    protected double maxRun;
+    protected double maxJump;
+    protected double maxSwim;
+
+    public Animal(){
+        this.name = "Животные";
+    }
+
+    public Animal(String _name){
+        this.name = _name;
+    }
 
 //6. Животные могут выполнять действия: бежать, плыть, перепрыгивать препятствие.
 // В качестве параметра каждому методу передается величина, означающая или длину препятствия (для бега и плавания), или высоту (для прыжков);
@@ -13,30 +21,30 @@ public abstract class Animal{
     //задаем ограничения для конкретного обекта класса
     public void setMaxRun(double _maxDistance) {
         if(_maxDistance > 0)
-            this.run =_maxDistance;
+            this.maxRun =_maxDistance;
         else{
             System.out.println("Дистанция не может быть отрицательна или = 0. Установлена максимальная дистанция по умолчанию = 1");
-            this.run = 1;
+            this.maxRun = 1;
         }
     }
 
     //задаем ограничения для конкретного обекта класса
     public void setMaxJump(double _maxHeight) {
         if(_maxHeight > 0)
-            this.jump =_maxHeight;
+            this.maxJump =_maxHeight;
         else{
             System.out.println("Высота прыжка не может быть отрицательна или = 0. Установлена максимальная высота по усомчанию = 1");
-            this.jump = 1;
+            this.maxJump = 1;
         }
     }
 
     //описываю общие для всех подклассов методы(бегать, прыгать) передаю переменнуюдля проверки условия
     public boolean running(double _distance) {
-        return _distance <= this.run;
+        return _distance <= this.maxRun;
     }
 
     public boolean jumping(double _height) {
-        return _height <= this.jump;
+        return _height <= this.maxJump;
     }
 }
 

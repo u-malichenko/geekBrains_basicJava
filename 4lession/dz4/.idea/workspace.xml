@@ -2,62 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b4697972-49ea-4396-9177-07e76882e5f4" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../4lession.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dz4.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/dz4/Animal.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/dz4/Cat.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/dz4/Dog.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/dz4/META-INF/dz4.kotlin_module" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/dz4/MainClass.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/dz4/Person.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/dz4/Swim.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Animal.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Cat.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Dog.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/MainClass.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Person.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Swim.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../src/A.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../src/Animal.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../src/AnimalAbstract.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../src/AnnouncementImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../src/Announcment.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../src/Audi.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../src/B.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../src/Beast.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../src/Birds.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../src/CarTemplate.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../src/Cat.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../src/CatAbstract.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../src/CatTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../src/Container.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../src/Duck.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../src/Encapsulated.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../src/HeavyContainer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../src/MainActivity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../src/MainClass.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../src/MainClassAbstract.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../src/News.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../src/NewsImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../src/Publication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../src/PublicationExample.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../src/Renderable.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Тема 4. Урок 1. Что такое ООП и зачем это нужно. Основные понятия.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Тема 4. Урок 2. Создание классов и объектов.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Тема 4. Урок 3. Инкапсуляция.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Тема 4. Урок 4. Наследование.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Тема 4. Урок 5. Абстрактные классы, интерфейсы и полиморфизм.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../3lession/dz3/src/TicTacToe1.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../3lession/dz3/src/TicTacToe1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/dz4/Animal.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/dz4/Animal.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/dz4/Cat.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/dz4/Cat.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/dz4/Dog.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/dz4/Dog.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/dz4/MainClass.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/dz4/MainClass.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/dz4/Person.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/dz4/Person.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Animal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Animal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Cat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Cat.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Dog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Dog.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MainClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MainClass.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Person.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -81,6 +36,7 @@
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
   </component>
   <component name="RunDashboard">
@@ -120,6 +76,14 @@
       <option name="presentableId" value="Default" />
       <updated>1571054154455</updated>
     </task>
+    <task id="LOCAL-00001" summary="v1">
+      <created>1571142400886</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1571142400886</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -132,5 +96,10 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="v1" />
+    <option name="LAST_COMMIT_MESSAGE" value="v1" />
   </component>
 </project>

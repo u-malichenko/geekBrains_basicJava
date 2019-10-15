@@ -8,10 +8,10 @@ public class Dog extends Animal implements Swim{
 
     //конструктор с параметрами:
     public Dog(String _name, double _run, double _jump, double _swim){
-        this.name = _name;
-        this.run = _run;
-        this.jump = _jump;
-        this.swim = _swim;
+       super("Пёс "  + _name);
+        this.maxRun = _run;
+        this.maxJump = _jump;
+        this.maxSwim = _swim;
     }
 
     //специфичный метод перезаписанный из абстрактного метода и класса Animal:
@@ -23,12 +23,17 @@ public class Dog extends Animal implements Swim{
     //методы из специфичного инетфейса Swim:
     @Override
     public void setMaxSwim(double _maxDistance) {
-            this.swim = _maxDistance;
+        if(_maxDistance > 0)
+            this.maxSwim =_maxDistance;
+        else{
+            System.out.println("Дистанция не может быть отрицательна или = 0. Установлена максимальная дистанция по умолчанию = 1");
+            this.maxSwim = 1;
+        }
     }
 
     @Override
     public boolean swimming(double _distance) {
-        if(_distance <= this.swim)
+        if(_distance <= this.maxSwim)
             return true;
         else
             return false;

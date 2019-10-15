@@ -8,9 +8,9 @@ public class Cat extends Animal {
 
     //конструктор с параметрами:
     public Cat(String _name, double _run, double _jump){
-        this.name = _name;
-        this.run = _run;
-        this.jump = _jump;
+        super("Кот " + _name); //переопределяем конструктор с именем
+        this.maxRun = _run;
+        this.maxJump = _jump;
     }
 
     //специфичный метод перезаписанный из абстрактного метода и класса Animal:
