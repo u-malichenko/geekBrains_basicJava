@@ -88,8 +88,6 @@ public class TicTacToe1 {
     private static void computerTurn(){
         int x = -1;
         int y = -1;
-        int rate = 1; // рейтинг ячейки в памяти не меньше 1 иначе выбираем рандомную ячейку дальше в методе в конце
-        int res = 0; // рейтинг ячейки кандидата на больший вес
 
         if(SILLY_MODE){
             do{
