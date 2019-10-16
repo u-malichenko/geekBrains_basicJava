@@ -1,0 +1,55 @@
+public class MainClass {
+    public static void main(String[] args) {
+//4. Создать массив из 5 сотрудников. С помощью цикла вывести информацию только о сотрудниках старше 40 лет;
+        // Вначале объявляем массив объектов
+        Person[] persArray = new Person[5];
+
+        // потом для каждой ячейки массива задаем объект
+        persArray[0] = new Person("Ivanov Ivan", "Engineer", " ivIvan@mailbox.com ", "892312312", 30000,30);
+        persArray[1] = new Person("Petrov Petr", "Cleaner", " PPetrov@mailbox.com ", "892312313", 60000,42);
+        persArray[2] = new Person("Sidorov Oleg", "Builder", " OSidorov@mailbox.com ", "892312314", 32000,35);
+        persArray[3] = new Person("Sokolov Ivan", "Manager", " ivSokolov@mailbox.com ", "892312315", 62000,45);
+        persArray[4] = new Person("Tarkovsky Ivan", "Seller", " ivTarkovsky@mailbox.com ", "892312316", 30000,40);
+
+        for (Person per : persArray) {
+            if(per.getPersonAge() > 40){
+                //per.getPersonInfo();
+                System.out.println(per);
+            }
+        }
+
+
+        Animal cat1 = new Cat("Barsik", 200,2.1); //создали переменную кэт куда положили экземпляр класа Анимал c конкретными ограничениями
+        Dog dog1 = new Dog("Sharik",500,0.5,10);//создали переменную  дог куда положили экземпляр класа Дог c конкретными ограничениями, так как класс Свимминг есть только там
+
+        System.out.println("");
+        //Дог1 пытается проплыть х метров
+        double x=10;
+        System.out.println(dog1.name + " - результат заплыва на дистанцию: " + x + " метров, - " + (dog1.swimming(x) ? (" преодолеет препятствие. " + dog1.voice()) : " не сможет преодалеть препятствие  "));
+
+        //Кэт1 пытается пробежать y метров
+        double y=201;
+        System.out.println(cat1.name + " - результат забега на дистанцию: " + y + " метров, - " + (cat1.running(y) ? (" преодолеет препятствие. " + cat1.voice()) : " не сможет преодалеть препятствие "));
+
+        //Кэт1 пытается првгнуть z метров
+        double z=2;
+        System.out.println(cat1.name + " - результат прыжка высотой: " + z + " метра, - " + (cat1.jumping(z) ? (" преодолеет препятствие. " + cat1.voice()) : " не сможет преодалеть препятствие  "));
+
+        //животное издает звук если может выполнить действие с заданными параметрами
+
+        //задаем параметры животных при помощи сеттеров, конструкторы пустые
+        Animal cat2 = new Cat(); //конструкторы пустые
+        cat2.setMaxJump(3); //при помощи сеттеров
+        cat2.setMaxRun(300); //при помощи сеттеров
+        cat2.running(250);
+        cat2.jumping(4);
+
+        Dog dog2 = new Dog(); //конструкторы пустые
+        dog2.setMaxJump(3);
+        dog2.setMaxRun(300);
+        dog2.running(250);
+        dog2.jumping(4);
+        dog2.swimming(11);
+
+    }
+}
