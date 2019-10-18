@@ -1,6 +1,6 @@
 package malichenko.basicJavaProjeect.lession5;
 
-public class MainClass {
+public class MainClass5 {
     public static void main(String[] args) {
 
 //6. Создать массив котов и одну тарелку с едой,

@@ -1,6 +1,6 @@
 package malichenko.basicJavaProjeect.lession4;
 
-public class MainClass {
+public class MainClass4 {
     public static void main(String[] args) {
 //4. Создать массив из 5 сотрудников. С помощью цикла вывести информацию только о сотрудниках старше 40 лет;
         // Вначале объявляем массив объектов

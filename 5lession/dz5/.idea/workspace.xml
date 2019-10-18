@@ -1,7 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b4697972-49ea-4396-9177-07e76882e5f4" name="Default Changelist" comment="" />
+    <list default="true" id="b4697972-49ea-4396-9177-07e76882e5f4" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../../4lession/dz4.0/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../4lession/dz4.0/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../4lession/dz4.0/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../4lession/dz4.0/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../4lession/dz4.0/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../4lession/dz4.0/dz4.0.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../4lession/dz4.0/src/Animal.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../4lession/dz4.0/src/Cat.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../4lession/dz4.0/src/Dog.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../4lession/dz4.0/src/MainClass.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../4lession/dz4.0/src/Person.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../4lession/dz4.0/src/SuperCat.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/dz4/malichenko/basicJavaProjeect/lession4/MainClass.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/dz4/malichenko/basicJavaProjeect/lession5/MainClass.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/dz4/malichenko/basicJavaProjeect/lession5/NewCat.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/dz4/malichenko/basicJavaProjeect/lession5/NewCat.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/malichenko/basicJavaProjeect/lession4/MainClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/malichenko/basicJavaProjeect/lession4/MainClass4.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/malichenko/basicJavaProjeect/lession5/Bowl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/malichenko/basicJavaProjeect/lession5/Bowl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/malichenko/basicJavaProjeect/lession5/MainClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/malichenko/basicJavaProjeect/lession5/MainClass5.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/malichenko/basicJavaProjeect/lession5/NewCat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/malichenko/basicJavaProjeect/lession5/NewCat.java" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,9 +66,16 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.MainClass (1)">
-    <configuration name="MainClass (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="malichenko.basicJavaProjeect.lession5.MainClass" />
+  <component name="RunManager" selected="Application.MainClass">
+    <configuration name="MainClass" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Lession4.MainClass" />
+      <module name="dz4" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MainClass5" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="malichenko.basicJavaProjeect.lession5.MainClass5" />
       <module name="dz4" />
       <extension name="coverage">
         <pattern>
@@ -59,16 +87,9 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MainClass" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Lession4.MainClass" />
-      <module name="dz4" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.MainClass (1)" />
+        <item itemvalue="Application.MainClass5" />
         <item itemvalue="Application.MainClass" />
       </list>
     </recent_temporary>
