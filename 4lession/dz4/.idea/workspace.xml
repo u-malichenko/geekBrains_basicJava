@@ -2,17 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b4697972-49ea-4396-9177-07e76882e5f4" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../../5lession/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../5lession/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../5lession/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../5lession/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../5lession/5lession.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../5lession/src/Lession5/Test.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../5lession/Тема 5. Урок 1. Хранение данных в Java_ стек, куча.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../5lession/Тема 5. Урок 2. Сборка мусора.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../5lession/Тема 5. Урок 3. Строковые классы, пулы строк.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../dz4 — копия/testClass/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/malichenko/basicJavaProjeect/lession5/Bowl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/malichenko/basicJavaProjeect/lession5/MainClass.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/malichenko/basicJavaProjeect/lession5/NewCat.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../dz4.zip" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Animal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/malichenko/basicJavaProjeect/lession4/Animal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Cat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/malichenko/basicJavaProjeect/lession4/Cat.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Dog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/malichenko/basicJavaProjeect/lession4/Dog.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MainClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/malichenko/basicJavaProjeect/lession4/MainClass.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/malichenko/basicJavaProjeect/lession4/Person.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SuperCat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/malichenko/basicJavaProjeect/lession4/SuperCat.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../dz4v2.zip" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../dz4v3.zip" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../dz4v3/.idea/dz4v3.iml" beforeDir="false" />
@@ -79,6 +80,7 @@
       <change beforePath="$PROJECT_DIR$/../dz4v5me.zip" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../src.rar" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../testClass.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../5lession/src/Lession5/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../5lession/src/Lession5/Test.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -104,7 +106,12 @@
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../dz4 — копия/testClass" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="lession4" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -118,9 +125,22 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.MainClass (1)">
+    <configuration name="MainClass (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="malichenko.basicJavaProjeect.lession5.MainClass" />
+      <module name="dz4" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="malichenko.basicJavaProjeect.lession5.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="MainClass" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="MainClass" />
+      <option name="MAIN_CLASS_NAME" value="Lession4.MainClass" />
       <module name="dz4" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -128,6 +148,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.MainClass (1)" />
         <item itemvalue="Application.MainClass" />
       </list>
     </recent_temporary>
