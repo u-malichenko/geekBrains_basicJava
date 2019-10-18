@@ -2,25 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b4697972-49ea-4396-9177-07e76882e5f4" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../../4lession/dz4.0/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../4lession/dz4.0/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../4lession/dz4.0/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../4lession/dz4.0/.idea/uiDesigner.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../4lession/dz4.0/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../4lession/dz4.0/dz4.0.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../4lession/dz4.0/src/Animal.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../4lession/dz4.0/src/Cat.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../4lession/dz4.0/src/Dog.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../4lession/dz4.0/src/MainClass.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../4lession/dz4.0/src/Person.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../4lession/dz4.0/src/SuperCat.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/dz4/malichenko/basicJavaProjeect/lession4/MainClass.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/dz4/malichenko/basicJavaProjeect/lession5/MainClass.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/dz4/malichenko/basicJavaProjeect/lession5/NewCat.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/dz4/malichenko/basicJavaProjeect/lession5/NewCat.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/malichenko/basicJavaProjeect/lession4/MainClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/malichenko/basicJavaProjeect/lession4/MainClass4.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/malichenko/basicJavaProjeect/lession5/Bowl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/malichenko/basicJavaProjeect/lession5/Bowl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/malichenko/basicJavaProjeect/lession5/MainClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/malichenko/basicJavaProjeect/lession5/MainClass5.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/malichenko/basicJavaProjeect/lession5/MainClass5.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/malichenko/basicJavaProjeect/lession5/MainClass5.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/malichenko/basicJavaProjeect/lession5/NewCat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/malichenko/basicJavaProjeect/lession5/NewCat.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -66,7 +51,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.MainClass">
+  <component name="RunManager" selected="Application.MainClass5">
     <configuration name="MainClass" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Lession4.MainClass" />
       <module name="dz4" />
@@ -133,7 +118,14 @@
       <option name="project" value="LOCAL" />
       <updated>1571381367216</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="v 1">
+      <created>1571383648043</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1571383648043</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

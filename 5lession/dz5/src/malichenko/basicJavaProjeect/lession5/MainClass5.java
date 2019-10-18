@@ -1,5 +1,7 @@
 package malichenko.basicJavaProjeect.lession5;
 
+import malichenko.basicJavaProjeect.lession4.Cat;
+
 public class MainClass5 {
     public static void main(String[] args) {
 
@@ -13,6 +15,10 @@ public class MainClass5 {
         arrayOfNewCat[2] = new NewCat("Васька!", 3);
         arrayOfNewCat[3] = new NewCat("Марсель", 14);
         arrayOfNewCat[4] = new NewCat("София", 3);
+
+//        for (int i = 0; i < arrayOfNewCat.length; i++) {
+//            arrayOfNewCat[i] = new NewCat(("# "+i), i);
+//        }
 
 
 //6. попросить всех котов покушать из этой тарелки и потом вывести информацию о сытости котов в консоль;
