@@ -10,7 +10,7 @@ public class MainClass {
 
         arrayOfNewCat[0] = new NewCat("Barsik",1);
         arrayOfNewCat[1] = new NewCat("Ася", 5);
-        arrayOfNewCat[2] = new NewCat("Васька!", 7);
+        arrayOfNewCat[2] = new NewCat("Васька!", 3);
         arrayOfNewCat[3] = new NewCat("Марсель", 14);
         arrayOfNewCat[4] = new NewCat("София", 3);
 
