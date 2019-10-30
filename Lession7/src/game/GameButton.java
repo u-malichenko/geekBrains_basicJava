@@ -29,7 +29,7 @@ public class GameButton extends JButton {
     public GameBoard getBoard() {
         return board;
     }
-
+//метод необходимый для расчета координат ячейки
     public int getButtonIndex() {
         return buttonIndex;
     }

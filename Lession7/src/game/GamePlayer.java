@@ -71,15 +71,15 @@ public class GamePlayer {
 
     void updateByAiData(GameButton button) {
         //генерация координат хода компьютера
-        int x = -1, y = -1;
+        int row = -1, cell = -1;
         Random rnd = new Random();
 
         //проверяем играет ли ПК в роли рандомного пк?
         if (button.getBoard().getGame().isSillyMode()) {
             do {
-                x = rnd.nextInt(GameBoard.dimension);
-                y = rnd.nextInt(GameBoard.dimension);
-            } while (!button.getBoard().isTurnable(x, y));
+                row = rnd.nextInt(GameBoard.dimension);
+                cell = rnd.nextInt(GameBoard.dimension);
+            } while (!button.getBoard().isTurnable(row, cell));
         }
 
         //иначе ПК игрет в роли сильного ПК
@@ -98,64 +98,64 @@ public class GamePlayer {
                 //маркер торго, что ход найден! Нужен для выхода из двойного цикла
                 boolean moveFound = false;
                 //упрощенный алгоритм
-                for (int col = 0; col < SIZE; col++) { // строки
-                    for (int row = 0; row < SIZE; row++) { // столбцы       обходим массив двойным циклом
-                        if (button.getBoard().isTurnable(col, row)) { //если мы в текущий момент работаем с пустой клеткой то начинаем опеределять соседей
+                for (int i = 0; i < SIZE; i++) { // строки
+                    for (int j = 0; j < SIZE; j++) { // столбцы       обходим массив двойным циклом
+                        if (button.getBoard().isTurnable(i, j)) { //если мы в текущий момент работаем с пустой клеткой то начинаем опеределять соседей
                             //проверяем направления
                             //лево верх
-                            if (col - 1 >= 0 && row - 1 >= 0 && button.getBoard().getGameField(col - 1, row - 1) == DOT_O) {
+                            if (i - 1 >= 0 && j - 1 >= 0 && button.getBoard().getGameField(i - 1, j - 1) == DOT_O) {
                                 // проверяем больше ли они нуля, чтоб не выходить за границы массива? последним условием проверяем что там есть знак ПК
-                                x = col; // строки
-                                y = row; // столбцы
+                                row = i; // строки
+                                cell = j; // столбцы
                                 moveFound = true;
                                 System.out.println("LU");
                             }
                             //верх
-                            else if (col - 1 >= 0 && button.getBoard().getGameField(col - 1, row) == DOT_O) {
-                                x = col;
-                                y = row;
+                            else if (i - 1 >= 0 && button.getBoard().getGameField(i - 1, j) == DOT_O) {
+                                row = i;
+                                cell = j;
                                 moveFound = true;
                                 System.out.println("U");
                             }
                             //право верх
-                            else if (col - 1 >= 0 && row + 1 < SIZE && button.getBoard().getGameField(col - 1, row + 1) == DOT_O) {
-                                x = col;
-                                y = row;
+                            else if (i - 1 >= 0 && j + 1 < SIZE && button.getBoard().getGameField(i - 1, j + 1) == DOT_O) {
+                                row = i;
+                                cell = j;
                                 moveFound = true;
                                 System.out.println("RU");
                             }
                             //право
-                            else if (row + 1 < SIZE && button.getBoard().getGameField(col, row + 1) == DOT_O) {
-                                x = col;
-                                y = row;
+                            else if (j + 1 < SIZE && button.getBoard().getGameField(i, j + 1) == DOT_O) {
+                                row = i;
+                                cell = j;
                                 moveFound = true;
                                 System.out.println("R");
                             }
                             //право низ
-                            else if (col + 1 < SIZE && row + 1 < SIZE && button.getBoard().getGameField(col + 1, row + 1) == DOT_O) {
-                                x = col;
-                                y = row;
+                            else if (i + 1 < SIZE && j + 1 < SIZE && button.getBoard().getGameField(i + 1, j + 1) == DOT_O) {
+                                row = i;
+                                cell = j;
                                 moveFound = true;
                                 System.out.println("RD");
                             }
                             //низ
-                            else if (col + 1 < SIZE && button.getBoard().getGameField(col + 1, row) == DOT_O) {
-                                x = col;
-                                y = row;
+                            else if (i + 1 < SIZE && button.getBoard().getGameField(i + 1, j) == DOT_O) {
+                                row = i;
+                                cell = j;
                                 moveFound = true;
                                 System.out.println("B");
                             }
                             //лево низ
-                            else if (col + 1 < SIZE && row - 1 >= 0 && button.getBoard().getGameField(col + 1, row - 1) == DOT_O) {
-                                x = col;
-                                y = row;
+                            else if (i + 1 < SIZE && j - 1 >= 0 && button.getBoard().getGameField(i + 1, j - 1) == DOT_O) {
+                                row = i;
+                                cell = j;
                                 moveFound = true;
                                 System.out.println("LB");
                             }
                             //лево
-                            else if (row - 1 >= 0 && button.getBoard().getGameField(col, row - 1) == DOT_O) {
-                                x = col;
-                                y = row;
+                            else if (j - 1 >= 0 && button.getBoard().getGameField(i, j - 1) == DOT_O) {
+                                row = i;
+                                cell = j;
                                 moveFound = true;
                                 System.out.println("L");
                             }
@@ -170,70 +170,70 @@ public class GamePlayer {
             // конец простого хода пк
             else {
 // сложный режим
-                int maxScoreFieldX = -1;
-                int maxScoreFieldY = -1;
+                int maxScoreFieldRow = -1;
+                int maxScoreFieldCell = -1;
                 int maxScore = 0; // максимальный рейтинг
 
-                for (int col = 0; col < SIZE; col++) { //первый цикл строк
-                    for (int row = 0; row < SIZE; row++) { //второй цикл столбцов
+                for (int i = 0; i < SIZE; i++) { //первый цикл строк
+                    for (int j = 0; j < SIZE; j++) { //второй цикл столбцов
                         int fieldScore = 0; //переменная для текущего значения рейтинга
 
-                        if (button.getBoard().isTurnable(col, row)) { // если поле пустое? то проверяем направления для этой ячейки и считаем рейтинг
+                        if (button.getBoard().isTurnable(i, j)) { // если поле пустое? то проверяем направления для этой ячейки и считаем рейтинг
                             // проверяем направления
                             //лево верх
-                            if (col - 1 >= 0 && row - 1 >= 0 && button.getBoard().getGameField(col - 1, row - 1) == DOT_O)
+                            if (i - 1 >= 0 && j - 1 >= 0 && button.getBoard().getGameField(i - 1, j - 1) == DOT_O)
                                 fieldScore++;
                             //верх
-                            if (col - 1 >= 0 && button.getBoard().getGameField(col - 1, row) == DOT_O) fieldScore++;
+                            if (i - 1 >= 0 && button.getBoard().getGameField(i - 1, j) == DOT_O) fieldScore++;
                             //право верх
-                            if (col - 1 >= 0 && row + 1 < SIZE && button.getBoard().getGameField(col - 1, row + 1) == DOT_O)
+                            if (i - 1 >= 0 && j + 1 < SIZE && button.getBoard().getGameField(i - 1, j + 1) == DOT_O)
                                 fieldScore++;
                             //право
-                            if (row + 1 < SIZE && button.getBoard().getGameField(col, row + 1) == DOT_O) fieldScore++;
+                            if (j + 1 < SIZE && button.getBoard().getGameField(i, j + 1) == DOT_O) fieldScore++;
                             //право низ
-                            if (col + 1 < SIZE && row + 1 < SIZE && button.getBoard().getGameField(col + 1, row + 1) == DOT_O)
+                            if (i + 1 < SIZE && j + 1 < SIZE && button.getBoard().getGameField(i + 1, j + 1) == DOT_O)
                                 fieldScore++;
                             //низ
-                            if (col + 1 < SIZE && button.getBoard().getGameField(col + 1, row) == DOT_O) fieldScore++;
+                            if (i + 1 < SIZE && button.getBoard().getGameField(i + 1, j) == DOT_O) fieldScore++;
                             //лево низ
-                            if (col + 1 < SIZE && row - 1 >= 0 && button.getBoard().getGameField(col + 1, row - 1) == DOT_O)
+                            if (i + 1 < SIZE && j - 1 >= 0 && button.getBoard().getGameField(i + 1, j - 1) == DOT_O)
                                 fieldScore++;
                             //лево
-                            if (row - 1 >= 0 && button.getBoard().getGameField(col, row - 1) == DOT_O) fieldScore++;
+                            if (j - 1 >= 0 && button.getBoard().getGameField(i, j - 1) == DOT_O) fieldScore++;
                         } // конец проверки ПУСТОЙ ячейки
 
                         if (fieldScore > maxScore) { //сравниваем текущее полученное колличество очков с предыдущим максимальным
                             maxScore = fieldScore; //, если надо заменяем максимальное и координаты
-                            maxScoreFieldX = col;
-                            maxScoreFieldY = row;
+                            maxScoreFieldRow = i;
+                            maxScoreFieldCell = j;
                         }
                     }//первый фор
                 }//второй фор
 
                 //если в цикле найдена наилучшая клетка
-                if (maxScoreFieldX != -1) {
-                    x = maxScoreFieldX; //обновим координаты х у через временные из цикла
-                    y = maxScoreFieldY;
+                if (maxScoreFieldRow != -1) {
+                    row = maxScoreFieldRow; //обновим координаты х у через временные из цикла
+                    cell = maxScoreFieldCell;
                 }
             } // конец сложного хода конец эльзе
 
             //если ни чего не нашли, тогда генерируем случайный ход
-            if (x == -1) {
+            if (row == -1) {
                 do {
-                    x = rnd.nextInt(GameBoard.dimension);
-                    y = rnd.nextInt(GameBoard.dimension);
-                } while (!button.getBoard().isTurnable(x, y));
+                    row = rnd.nextInt(GameBoard.dimension);
+                    cell = rnd.nextInt(GameBoard.dimension);
+                } while (!button.getBoard().isTurnable(row, cell));
             }
         }
 
         //обновить матрицу игры
-        button.getBoard().updateGameField(x, y); //строку и столбец
+        button.getBoard().updateGameField(row, cell); //строку и столбец
 
         //обновить содержимое кнопки
         //получить индекс кнопки:
         //размерность нашего поля нужно умножить на номер ряда и прибавить номер столбца
         //это обратная формула к тем самым двум
-        int cellIndex = GameBoard.dimension * x + y;
+        int cellIndex = GameBoard.dimension * row + cell;
 
         //получить кнопку по ее индексу getButton(cellIndex
         //и присваиваем ее тексту значение символа текущего игрока тоесть компа

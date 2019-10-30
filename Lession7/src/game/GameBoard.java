@@ -159,34 +159,34 @@ public class GameBoard extends JFrame {
 
     /**
      * Метод проверки доступности клетки дял хода
-     * @param x - по горизонтали
-     * @param y - по вертикали
+     * @param row - по горизонтали
+     * @param cell - по вертикали
      * @return boolean
      */
     //метод проверка поля что туда можно пойти получает координаты проверяемой кнопки
-    boolean isTurnable(int x, int y) {
+    boolean isTurnable(int row, int cell) {
         boolean result = false;
 
         //если поле по данным координатам содержит кнопку с пустым символом, то  тогда можно ходить
-        if (gameField[x][y] == nullSymbol)//замил путанные значения у х местами, соответственно смели и в Экшенлисенер
+        if (gameField[row][cell] == nullSymbol)//замил путанные значения у х местами, соответственно смели и в Экшенлисенер
             result = true;
         return result;
     }
 
     /**
      * Обновление матрицы игры после хода
-     * @param x - по горизонтали
-     * @param y - по вертикали
+     * @param row - по горизонтали
+     * @param cell - по вертикали
      */
     //приняли две координаты
-    void updateGameField(int x, int y) {
+    void updateGameField(int row, int cell) {
         //должны поставить в нашу клеточкуу символ игрока
         //для того тчоб получить этот символ у нас есть ссылка на объект игры game
         //у ее мы можем узнать кто же сейчас текущий игрок, но только текущего игрока не хватит
         //мы должны поставить туда его символ а не его самого, по этому
         //у полученного объекта игрока getCurrentPlayer мы получаем символ через getPlayerSign
         //и проставляем его символ в указанную клеточку gameField[y][x]
-        gameField[x][y] = game.getCurrentPlayer().getPlayerSign();
+        gameField[row][cell] = game.getCurrentPlayer().getPlayerSign();
     }
 
     /**
@@ -248,22 +248,22 @@ public class GameBoard extends JFrame {
      * @return флаг победы
      */
     private boolean checkWinLines(char playerSymbol) {
-        boolean cols, rows, result;
+        boolean cells, rows, result;
         result = false;
 
-        for (int col = 0; col < dimension; col++) { // строки
-            cols = true;  // строки
+        for (int i = 0; i < dimension; i++) { // строки
+            cells = true;  // строки
             rows = true; // столбцы
 
-            for (int row = 0; row < dimension; row++) {  // столбцы
-                cols &= (gameField[col][row] == playerSymbol);
-                rows &= (gameField[row][col] == playerSymbol); //обратно
+            for (int j = 0; j < dimension; j++) {  // столбцы
+                cells &= (gameField[i][j] == playerSymbol);
+                rows &= (gameField[j][i] == playerSymbol); //обратно
             }
 
 //это условие после каждой проверки колонки и стобца
 //позволяет остановить дальнейшее выполнение, без проверки
 //всех остальных строк и столбцов.
-            if (cols || rows) {
+            if (cells || rows) {
                 result = true;
                 break;
             }
