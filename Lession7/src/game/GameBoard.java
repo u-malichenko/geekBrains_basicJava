@@ -11,14 +11,14 @@ public class GameBoard extends JFrame {
     static int dimension = 3;
     //размер одной клетки
     static int cellSize = 150;
-    //матрица игры
+    //матрица игры(строка столбец)
     private char[][] gameField;
     //массив кнопок
     private GameButton[] gameButtons;
     //ссылка на игру
     private Game game;
     //пустой символ
-    static char nullSymbol = '\u0000';
+    private static char nullSymbol = '\u0000';
 
     /**
      * конструктор
@@ -27,7 +27,24 @@ public class GameBoard extends JFrame {
     public GameBoard(Game currentGame) {
         this.game = currentGame;
         initField(); //метод инициализации поля описан ниже
+    }
 
+    /**
+     * геттер размерности массива, нужен для работы сложного пк в GameActionListener
+     * @return - int - размерность игры
+     */
+    public int getDimension(){
+        return dimension;
+    }
+
+    /**
+     * метод получения знака в кнопке
+     * @param x строка массива
+     * @param y столбец массива
+     * @return char - символ в строке
+     */
+    public char getGameField(int x, int y){
+        return gameField[x][y];
     }
 
     /**
@@ -127,7 +144,7 @@ public class GameBoard extends JFrame {
         boolean result = false;
 
         //если поле по данным координатам содержит кнопку с пустым символом, то  тогда можно ходить
-        if (gameField[y][x] == nullSymbol)
+        if (gameField[x][y] == nullSymbol)//замил путанные значения у х местами, соответственно смели и в Экшенлисенер
             result = true;
         return result;
     }
@@ -145,7 +162,7 @@ public class GameBoard extends JFrame {
         //мы должны поставить туда его символ а не его самого, по этому
         //у полученного объекта игрока getCurrentPlayer мы получаем символ через getPlayerSign
         //и проставляем его символ в указанную клеточку gameField[y][x]
-        gameField[y][x] = game.getCurrentPlayer().getPlayerSign();
+        gameField[x][y] = game.getCurrentPlayer().getPlayerSign();
     }
 
     /**
@@ -210,18 +227,18 @@ public class GameBoard extends JFrame {
         boolean cols, rows, result;
         result = false;
 
-        for (int col = 0; col < dimension; col++) {
-            cols = true;
-            rows = true;
+        for (int col = 0; col < dimension; col++) { // строки
+            cols = true;  // строки
+            rows = true; // столбцы
 
-            for (int row = 0; row < dimension; row++) {
+            for (int row = 0; row < dimension; row++) {  // столбцы
                 cols &= (gameField[col][row] == playerSymbol);
-                rows &= (gameField[row][col] == playerSymbol);
+                rows &= (gameField[row][col] == playerSymbol); //обратно
             }
 
-            //это условие после каждой проверки колонки и стобца
-            //позволяет остановить дальнейшее выполнение, без проверки
-            //всех остальных строк и столбцов.
+//это условие после каждой проверки колонки и стобца
+//позволяет остановить дальнейшее выполнение, без проверки
+//всех остальных строк и столбцов.
             if (cols || rows) {
                 result = true;
                 break;
