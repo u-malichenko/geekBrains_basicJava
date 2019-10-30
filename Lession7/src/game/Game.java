@@ -29,10 +29,10 @@ public class Game {
      */
     public void initGame() {
         // включить режим слабого пк
-        sillyMode = false;
+        sillyMode = true;
 
         // выключить! режим простого подбора по соседним занчениям false = on
-        scoringMode = false;
+        scoringMode = true;
 
         gamePlayers[0] = new GamePlayer(true, 'X');
         gamePlayers[1] = new GamePlayer(false, 'O');
@@ -57,12 +57,26 @@ public class Game {
     }
 
     /**
+     * сеттер setSillyMode статуса слабого ПК
+     */
+    public void setSillyMode() {
+        sillyMode = false;
+    }
+
+    /**
      * геттер scoringMode статуса сильного ПК
      * для простого подбора или для подсчета веса ячейки
      * @return boolean
      */
     public boolean isScoringMode() {
         return scoringMode;
+    }
+
+    /**
+     * сеттер scoringMode статуса слабого ПК
+     */
+    public void setScoringMode() {
+        sillyMode = false;
     }
 
     /**

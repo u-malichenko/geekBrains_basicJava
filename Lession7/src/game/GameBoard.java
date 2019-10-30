@@ -61,6 +61,28 @@ public class GameBoard extends JFrame {
         JPanel controlPanel = new JPanel(); //создали панель управления игрой
         JButton newGameButton = new JButton("Новая игра"); //кнопка панели управления - НОвая игра с отдельным листнером
 
+        JButton setSillyModeButton = new JButton("sillyMode Off"); //кнопка панели управления - вкл слабый пк
+
+        JButton setScoringModeButton = new JButton("scoringMode Off"); //кнопка панели управления - выключение ближайших значений
+
+        //для scoringMode кнопки отдельный лисенер:
+        setScoringModeButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                //запускаем
+                game.setScoringMode();
+            }
+        });
+
+        //для sillyMode кнопки отдельный лисенер:
+        setSillyModeButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                //запускаем
+                game.setSillyMode();
+            }
+        });
+
         //для этой кнопки отдельный лисенер:
         newGameButton.addActionListener(new ActionListener() {
             @Override
@@ -72,8 +94,10 @@ public class GameBoard extends JFrame {
         });
 
         //устанавливаем стандартные настройки нашей панельки:
-        controlPanel.setLayout((new BoxLayout(controlPanel, BoxLayout.Y_AXIS))); //задаем расположение менеджер размещения
+        controlPanel.setLayout((new BoxLayout(controlPanel, BoxLayout.X_AXIS))); //задаем расположение менеджер размещения
         controlPanel.add(newGameButton); //добавляем ранее созданную кнопку на панель
+        controlPanel.add(setSillyModeButton); //добавляем ранее созданную кнопку на панель
+        controlPanel.add(setScoringModeButton); //добавляем ранее созданную кнопку на панель
         controlPanel.setSize(cellSize * dimension, 150); //устанавливаем размерность панели
 
         //следующая панель это панель самой мгры с кнопками хода
