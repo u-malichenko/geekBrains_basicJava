@@ -2,6 +2,7 @@ package game;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Random;
 
 public class GameActionListener implements ActionListener {
     // ряд и строка кнопки
@@ -12,7 +13,7 @@ public class GameActionListener implements ActionListener {
     private GameButton button;
 
     //конструктор
-    public GameActionListener(int row, int cell, GameButton gButton){
+    public GameActionListener(int row, int cell, GameButton gButton) {
         this.row = row;
         this.cell = cell;
         this.button = gButton;
@@ -22,22 +23,29 @@ public class GameActionListener implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         //через нашу кнопку мы можем получить ссылку на геймбоард:
         GameBoard board = button.getBoard();
-        //при ходе мы должны проверять можем ли мы в данную клетку текущему игроку
 
+        //при ходе мы должны проверять можем ли мы в данную клетку текущему игроку
         //если тру то изменяем кнопку(передаем координаты)
-        if(board.isTurnable(row,cell)){
+        if (board.isTurnable(row, cell)) {
             //простановка символа игрока
-            //вызываем метод обновления данных
+            //вызываем метод обновления данных для игрока человека метод человека
             updateByPlayersData(board);
 
             //сразу после хода провреяем не закончились ли места на поле
-            if(board.isFull()){
+            if (board.isFull()) {
                 //если поле заполнено, выводим сообщение ничья
                 board.getGame().showMessage("Ничья!");
                 //и чистим наше игровое поле
                 board.emptyField();
             }
-
+            //если !не все клетки заполнены и смена хода прошла успешно и
+            // сейчас играет игрок с признаком RealPlayer = false то у компьютера есть возможность хода:
+            //по ссылке на поле board, геттером getGame() получаем ссылку на игру,
+            //по ссылке на игру геттером getCurrentPlayer() получаем ссылку на игрока,
+            //по ссылке на игрока геттером isRealPlayer() получаем признак текущего игрока
+            else if(!board.getGame().getCurrentPlayer().isRealPlayer()){
+                updateByAiData(board);
+            }
         }
         else {
             //сообщение об ошибке
@@ -51,9 +59,9 @@ public class GameActionListener implements ActionListener {
      * ход человека
      * @param board - GameBoard ссылка на игровое поле
      */
-    private void updateByPlayersData(GameBoard board){
+    private void updateByPlayersData(GameBoard board) {
         //обновляем матрицу игры - записываем в ее значение проставленного хода
-        board.updateGameField(row,cell);
+        board.updateGameField(row, cell);
 
         //теперь нужно обновить содержимое кнопки
         //обращаемся к Баттон задаем ей сет текст и при помощи класса Обертки Чарактер
@@ -66,14 +74,46 @@ public class GameActionListener implements ActionListener {
         button.setText(Character.toString(board.getGame().getCurrentPlayer().getPlayerSign()));
 
         //и после хода нам нужно проверить состояние победы
-        if(board.checkWin()){
+        if (board.checkWin()) {
             //если он возвращает тру оповещаем игрока о том что он выиграл
             button.getBoard().getGame().showMessage("Вы выиграли!");
-            //чистим поле
-            board.emptyField();
+            board.emptyField();            //чистим поле
         }
-        //иначе мы должны передать ход
-        else {
+        else {         //иначе мы должны передать ход
+            board.getGame().passTurn();
+        }
+
+    }
+
+    private void updateByAiData(GameBoard board) {
+        //генерация координат хода компьютера
+        int x, y;
+        Random rnd = new Random();
+
+        do {
+            x = rnd.nextInt(GameBoard.dimension);
+            y = rnd.nextInt(GameBoard.dimension);
+        } while (!board.isTurnable(x, y));
+
+        //обновить матрицу игры
+        board.updateGameField(x, y);
+
+        //обновить содержимое кнопки
+        //получить индекс кнопки:
+        //размерность нашего поля нужно умножить на номер ряда и прибавить номер столбца
+        //это обратная формула к тем самым двум
+        int cellIndex = GameBoard.dimension * x + y;
+
+        //получить кнопку по ее индексу getButton(cellIndex
+        //и присваиваем ее тексту значение символа текущего игрока тоесть компа
+        board.getButton(cellIndex).setText(Character.toString(board.getGame().getCurrentPlayer().getPlayerSign()));
+
+        //проверяем победу
+        if (board.checkWin()) {
+            button.getBoard().getGame().showMessage("Компьютер выиграл");
+            board.emptyField();
+        } else {//если победа не найдена то предаем ход игроку
+            //передать ход
             board.getGame().passTurn();
         }
 
