@@ -53,13 +53,10 @@ public class GamePlayer {
      * @param button - GameBoard ссылка на игровое поле
      */
     void updateByPlayersData(GameButton button) {
-
         int row = button.getButtonIndex() / GameBoard.dimension;
         int cell = button.getButtonIndex() % GameBoard.dimension;
-
         //обновляем матрицу игры - записываем в ее значение проставленного хода
         button.getBoard().updateGameField(row, cell);
-
         //теперь нужно обновить содержимое кнопки
         //обращаемся к Баттон задаем ей сет текст и при помощи класса Обертки Чарактер
         // переводим ту стринг и получаем символ игрока известным нам методом:
@@ -69,7 +66,6 @@ public class GamePlayer {
         //у полученного объекта игрока getCurrentPlayer мы получаем символ через getPlayerSign
         //чар и стринг не идентичные типы так что используем тустринг
         button.setText(Character.toString(button.getBoard().getGame().getCurrentPlayer().getPlayerSign()));
-
         //и после хода нам нужно проверить состояние победы
         if (button.getBoard().checkWin()) {
             //если он возвращает тру оповещаем игрока о том что он выиграл

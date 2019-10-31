@@ -138,13 +138,10 @@ public class GameBoard extends JFrame {
     void emptyField() {
         //в цикле пробегает весь масив gameButtons
         for (int i = 0; i < (dimension * dimension); i++) {
-
             //будет обнулять значения внутри наших кнопок:
             gameButtons[i].setText("");
-
             int x = i / GameBoard.dimension;
             int y = i % GameBoard.dimension;
-
             gameField[x][y] = nullSymbol; //нельзя строчке присвоить пустое поле будет возникать ошибка? посему зададим его в переменных
         }
     }
@@ -165,12 +162,7 @@ public class GameBoard extends JFrame {
      */
     //метод проверка поля что туда можно пойти получает координаты проверяемой кнопки
     boolean isTurnable(int row, int cell) {
-        boolean result = false;
-
-        //если поле по данным координатам содержит кнопку с пустым символом, то  тогда можно ходить
-        if (gameField[row][cell] == nullSymbol)//замил путанные значения у х местами, соответственно смели и в Экшенлисенер
-            result = true;
-        return result;
+        return gameField[row][cell] == nullSymbol;
     }
 
     /**
@@ -194,18 +186,13 @@ public class GameBoard extends JFrame {
      * @return - флаг победы
      */
     boolean checkWin() {
-        boolean result = false;
         //символ нашего игрока мы получаем через
         //геттер нашей игры--
         //геттер текущего игрока--
         //геттер символа текущего игрока
         char playerSymbol = getGame().getCurrentPlayer().getPlayerSign();
-
         //проверяем по диагоналям и линиям как и в прошлом процедурном стиле
-        if (checkWinDiagonals(playerSymbol) || checkWinLines(playerSymbol)) {
-            result = true;
-        }
-        return result;
+        return (checkWinDiagonals(playerSymbol) || checkWinLines(playerSymbol));
     }
 
     /**
@@ -248,31 +235,17 @@ public class GameBoard extends JFrame {
      * @return флаг победы
      */
     private boolean checkWinLines(char playerSymbol) {
-        boolean cells, rows, result;
-        result = false;
-
+        boolean cells= true;
+        boolean rows = true;
         for (int i = 0; i < dimension; i++) { // строки
-            cells = true;  // строки
-            rows = true; // столбцы
+
 
             for (int j = 0; j < dimension; j++) {  // столбцы
                 cells &= (gameField[i][j] == playerSymbol);
                 rows &= (gameField[j][i] == playerSymbol); //обратно
             }
-
-//это условие после каждой проверки колонки и стобца
-//позволяет остановить дальнейшее выполнение, без проверки
-//всех остальных строк и столбцов.
-            if (cells || rows) {
-                result = true;
-                break;
-            }
-
-            if (result) {
-                break;
-            }
         }
-        return result;
+        return (cells || rows);
     }
 
     /**
@@ -284,17 +257,12 @@ public class GameBoard extends JFrame {
         boolean leftRight, rightLeft, result;
         leftRight = true;
         rightLeft = true;
-        result = false;
-
         for (int i = 0; i < dimension; i++) {
 
             leftRight &= (gameField[i][i] == playerSymbol);
             rightLeft &= (gameField[dimension - i - 1][i] == playerSymbol);
         }
-        if (leftRight || rightLeft) {
-            result = true;
-        }
-        return result;
+        return (leftRight || rightLeft);
     }
 
 }
